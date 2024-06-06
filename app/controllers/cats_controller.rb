@@ -3,7 +3,9 @@ class CatsController < ApplicationController
 
   # GET /cats
   def index
-    @cats = Cat.all
+    p params
+    @search = Cat.ransack(params[:q])
+    @cats = @search.result.page(params[:page])
   end
 
   # GET /cats/1

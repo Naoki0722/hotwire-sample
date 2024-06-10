@@ -1,0 +1,13 @@
+<%= bootstrap_form_with(model: cat) do |form| %>
+  <div>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.number_field :age %>
+  </div>
+
+  <div>
+    <%= form.primary %>
+  </div>
+<% end %>

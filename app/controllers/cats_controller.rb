@@ -26,6 +26,7 @@ class CatsController < ApplicationController
     @cat = Cat.new(cat_params)
 
     if @cat.save
+      # redirect_to @cat, notice: "ねこを更新しました。"
       flash.now.notice = "ねこを登録しました。"
     else
       render :new, status: :unprocessable_entity

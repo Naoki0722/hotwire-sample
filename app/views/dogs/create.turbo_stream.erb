@@ -1,0 +1,14 @@
+<%= turbo_stream.replace "new_dog" do %>
+  <turbo-frame id="new_dog">
+    <%= link_to "New dog", new_dog_path, class: "btn btn-primary" %>
+  </turbo-frame>
+<% end %>
+
+<%# `#cats`の先頭に登録されたcatを追加する %>
+<%= turbo_stream.prepend "dogs", @dog %>
+
+<%# 登録の入力フォームの中身を空にする %>
+<%= turbo_stream.update Dog.new, "" %>
+
+<%# Flashを表示 %>
+<%= turbo_stream_flash %>

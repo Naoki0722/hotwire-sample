@@ -2,13 +2,11 @@
 
 <h1>Dogs</h1>
 
+<%= turbo_frame_tag "new_dog" do %>
+  <%= link_to "New dog", new_dog_path, class: "btn btn-primary" %>
+<% end %>
 <div id="dogs">
   <% @dogs.each do |dog| %>
     <%= render dog %>
-    <p>
-      <%= link_to "Show this dog", dog %>
-    </p>
   <% end %>
 </div>
-
-<%= link_to "New dog", new_dog_path %>
